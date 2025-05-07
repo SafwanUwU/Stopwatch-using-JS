@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: white;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin-bottom: 30px;
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      }
+
+      #counter {
+        font-size: 80px;
+        padding: 20px 60px;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 20px #ffffff88;
+        margin-bottom: 40px;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+      }
+
+      button {
+        font-size: 30px;
+        margin: 10px;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(45deg, #ff7b00, #ff0066);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #00ffff, #0066ff);
+        box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🚀 Counter App</h1>
+    <div id="counter">0</div>
+    <div>
+      <button onclick="reduce()">➖</button>
+      <button onclick="reset()">🔁 Reset</button>
+      <button onclick="increase()">➕</button>
+    </div>
+
+    <script>
+      let count = 0;
+
+      function increase() {
+        count++;
+        updateCounter();
+      }
+
+      function reduce() {
+        count--;
+        updateCounter();
+      }
+
+      function reset() {
+        count = 0;
+        updateCounter();
+      }
+
+      function updateCounter() {
+        document.getElementById("counter").textContent = count;
+      }
+    </script>
+  </body>
+</html>
